@@ -24,12 +24,21 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     TransactionComponent,
     AccountDetailsComponent,
-    TransferFundsComponent
+    TransferFundsComponent,
+      SignUpComponent,
+    LoginComponent,
+    EnquiryFormComponent,
+    AccountsListComponent,
+    AccountsCreateNewComponent, 
+    AccountsDeleteComponent, 
+    AccountSpecificDetailsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
     AppRoutingModule
   ],
   providers: [],

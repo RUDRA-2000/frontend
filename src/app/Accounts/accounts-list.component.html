@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <h1>Accounts List For Customer ID: {{ CustId }}</h1>
+  <button class="btn btn-success" [routerLink]="['/create']">
+    <i class="fas fa-plus-circle"></i> Create New Account
+  </button>
+  <div *ngIf="accounts.length === 0" class="alert alert-info">No accounts found.</div>
+  <div *ngIf="accounts.length > 0" class="row mt-4">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Account ID</th>
+            <th>Balance</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let account of accounts">
+            <td>{{ account.accountID }}</td>
+            <td>{{ account.balance | currency }}</td>
+            <td>
+              <button class="btn btn-sm btn-outline-primary" [routerLink]="['/account-specific-details' , account.accountID]">View Detials</button>
+              <button class="btn btn-sm btn-outline-danger" [routerLink]="['/delete', account.accountID]" style="margin-left: 10px;">Delete</button>
+              <button *ngIf="shouldDisplayChequeButton(account)" class="btn btn-sm btn-outline-warning" (click)="applyForCheque(account.accountID)" style="margin-left: 10px;">Apply Cheque Book</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
