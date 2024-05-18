@@ -1,0 +1,22 @@
+<div>
+    <h2>Transfer Funds</h2>
+    <div>
+      <label>Source Account ID:</label>
+      <input type="text" [(ngModel)]="sourceAccountId">
+    </div>
+    <div>
+      <label>Destination Account ID:</label>
+      <input type="text" [(ngModel)]="destinationAccountId">
+    </div>
+    <div>
+      <label>Amount:</label>
+      <input type="text" [(ngModel)]="amount">
+    </div>
+    <button (click)="transferFunds()">Transfer Funds</button>
+    <div *ngIf="transferSuccess">
+      <p>Transfer successful!</p>
+    </div>
+    <div *ngIf="transferError">
+      <p>{{ transferError }}</p>
+    </div>
+  </div>

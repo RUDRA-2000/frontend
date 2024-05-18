@@ -1,0 +1,12 @@
+<div>
+  <h2>Transaction Details</h2>
+  <input type="number" [(ngModel)]="transactionId" placeholder="Enter Transaction ID">
+  <button (click)="getTransactionDetails()">Get Transaction Details</button>
+  <div *ngIf="transaction">
+    <p>Transaction ID: {{ transaction.transactionID }}</p>
+    <p>Amount: {{ transaction.amount }}</p>
+    <p>Time: {{ transaction.time | date:'short' }}</p>
+    <p>Source Account: {{ transaction.source_acc }}</p>
+    <p>Destination Account: {{ transaction.dest_acc }}</p>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Transaction } from '../model/transaction';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TransactionService {
+  apiUrl = 'http://localhost:5099/api/transaction'; // Replace with your API URL
+
+  constructor(private http: HttpClient) { }
+
+  getTransaction(transactionId: number): Observable<Transaction[]> {
+    const url = `${this.apiUrl}/Specific/${transactionId}`;
+    return this.http.get<Transaction[]>(url);
+  }
+
+  getAccountTransactions(accountId: number): Observable<Transaction[]> {
+    const url = `${this.apiUrl}/${accountId}`;
+    return this.http.get<Transaction[]>(url);
+  }
+
+  transferFunds(sourceAccountId: number, destinationAccountId: number, amount: number): Observable<any> {
+    const url = `${this.apiUrl}/Transfer`;
+    const body = { sourceAccountId, destinationAccountId, amount };
+    return this.http.post(url, body);
+  }
+}
