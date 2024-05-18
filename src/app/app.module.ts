@@ -27,7 +27,11 @@ import { HttpClientModule } from '@angular/common/http';
     TransferFundsComponent,
       SignUpComponent,
     LoginComponent,
-    EnquiryFormComponent
+    EnquiryFormComponent,
+    AccountsListComponent,
+    AccountsCreateNewComponent, 
+    AccountsDeleteComponent, 
+    AccountSpecificDetailsComponent
   ],
   imports: [
     BrowserModule,
