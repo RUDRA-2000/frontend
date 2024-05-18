@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AccountsService } from './accounts.service';
-import { Account } from '../Models/account';
+import { Account } from '../model/account';
 import { Router } from '@angular/router';
 
 @Component({

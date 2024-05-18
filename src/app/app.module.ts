@@ -8,11 +8,21 @@ import { SiteFooterComponent } from './ui/site-footer.component';
 import { NotFoundComponent } from './ui/not-found.component';
 import { SiteErrorComponent } from './ui/site-error.component';
 import { HomeComponent } from './ui/home.component';
-import { TransactionComponent } from './transaction/transaction.component';
-import { AccountDetailsComponent } from './transaction/account-details.component';
-import { TransferFundsComponent } from './transaction/transfer-funds.component';
-import { FormsModule } from '@angular/forms';
+import { TransactionComponent } from './Transaction/transaction.component';
+import { AccountDetailsComponent } from './Transaction/account-details.component';
+import { TransferFundsComponent } from './Transaction/transfer-funds.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SignUpComponent } from './SignUp/sign-up.component';
+import { AccountsCreateNewComponent } from './Accounts/accounts-create-new.component';
+import { LoginComponent } from './Login/login.component';
+import { EnquiryFormComponent } from './EnquiryForm/enquiry-form.component';
+import { AccountsDeleteComponent } from './Accounts/accounts-delete.component';
+import { AccountSpecificDetailsComponent } from './Accounts/account-specific-details.component';
+import { AccountsListComponent } from './Accounts/accounts-list.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     TransactionComponent,
     AccountDetailsComponent,
     TransferFundsComponent,
-      SignUpComponent,
+    SignUpComponent,
     LoginComponent,
     EnquiryFormComponent,
     AccountsListComponent,

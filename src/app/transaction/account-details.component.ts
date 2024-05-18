@@ -8,7 +8,7 @@ import { TransactionService } from './transaction.service';
   styleUrls: ['./account-details.component.css']
 })
 export class AccountDetailsComponent {
-  accountId: number=0;
+  accountId:number=0;
   transactions: Transaction[] = [];
   currentPage: number = 1;
   itemsPerPage: number = 10;
@@ -39,5 +39,11 @@ export class AccountDetailsComponent {
   getPaginationArray(): number[] {
     const pageCount = Math.ceil(this.transactions.length / this.itemsPerPage);
     return Array.from({ length: pageCount }, (_, index) => index + 1);
+  }
+
+  onKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.getAccountTransactions();
+    }
   }
 }

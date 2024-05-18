@@ -29,4 +29,9 @@ export class TransferFundsComponent {
           }
         });
   }
+  closeModal() {
+    this.transferSuccess = false;
+    this.transferError = '';
+  }
 }
+
