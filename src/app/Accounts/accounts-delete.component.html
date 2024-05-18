@@ -1,0 +1,27 @@
+<div class="container mt-3" *ngIf="account">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm mb-5 bg-white rounded">
+                <div class="card-header text-center bg-danger">
+                    <h1 class="h4">Account Details</h1>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Account ID: {{ account.accountID }}</h5>
+                    <p class="card-text"><strong>Balance:</strong> {{ account.balance | currency }}</p>
+                    <p class="card-text"><strong>Has Cheque:</strong> {{ account.hasCheque ? 'Yes' : 'No' }}</p>
+                    <p class="card-text"><strong>Withdrawal Quota:</strong> {{ account.wd_quota }}</p>
+                    <p class="card-text"><strong>Deposit Quota:</strong> {{ account.dp_quota }}</p>
+                    <p class="card-text"><strong>Is Active:</strong> {{ account.isActive ? 'Yes' : 'No' }}</p>
+                    <p class="card-text"><strong>Customer ID:</strong> {{ account.customerID }}</p>
+                    <p class="card-text"><strong>Type ID:</strong> {{ account.type_id }}</p>
+                    <p class="card-text"><strong>Branch ID:</strong> {{ account.branchID }}</p>
+                </div>
+                <div class="card-footer text-center mb-1">
+                    <span class="d-block mb-1">Are you sure to delete the item?</span>
+                    <button class="btn btn-sm btn-danger me-2 text-dark" (click)="deleteAccount()">Yes, Delete Account</button>
+                    <button class="btn btn-sm btn-outline-primary" [routerLink]="'/list'">No, Back to List</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
