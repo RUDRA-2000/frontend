@@ -10,6 +10,8 @@ import { TransactionService } from './transaction.service';
 export class AccountDetailsComponent {
   accountId: number=0;
   transactions: Transaction[] = [];
+  currentPage: number = 1;
+  itemsPerPage: number = 10;
 
   constructor(private transactionService: TransactionService) { }
 
@@ -24,5 +26,18 @@ export class AccountDetailsComponent {
           console.error(error);
         }
   });
+  }
+  onPageChange(pageNumber: number) {
+    this.currentPage = pageNumber;
+  }
+
+  getPaginatedTransactions(): Transaction[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    return this.transactions.slice(startIndex, startIndex + this.itemsPerPage);
+  }
+
+  getPaginationArray(): number[] {
+    const pageCount = Math.ceil(this.transactions.length / this.itemsPerPage);
+    return Array.from({ length: pageCount }, (_, index) => index + 1);
   }
 }
