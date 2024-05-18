@@ -7,9 +7,9 @@ import { TransactionService } from './transaction.service';
   styleUrls: ['./transfer-funds.component.css']
 })
 export class TransferFundsComponent {
-  sourceAccountId: number=0;
-  destinationAccountId: number=0;
-  amount: number=0;
+  sourceAccountId: number = 0;
+  destinationAccountId: number = 0;
+  amount: number = 0;
   transferSuccess: boolean = false;
   transferError: string = '';
 
@@ -18,14 +18,15 @@ export class TransferFundsComponent {
   transferFunds() {
     this.transactionService.transferFunds(this.sourceAccountId, this.destinationAccountId, this.amount)
       .subscribe(
-        (data) => {
-          this.transferSuccess = true;
-          this.transferError = '';
-        },
-        (error) => {
-          this.transferSuccess = false;
-          this.transferError = error.message;
-        }
-      );
+        {
+          next: (data) => {
+            this.transferSuccess = true;
+            this.transferError = '';
+          },
+          error: (error) => {
+            this.transferSuccess = false;
+            this.transferError = error.message;
+          }
+        });
   }
 }

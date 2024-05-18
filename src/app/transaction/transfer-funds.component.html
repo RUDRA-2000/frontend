@@ -1,18 +1,73 @@
 <div>
+  <div class="text-center">
     <h2>Transfer Funds</h2>
-    <div>
+  </div>
+    <!-- <div class="input-group">
+      <span class="input-group-text">Source Account ID:</span>
+      <input type="text"  [(ngModel)]="sourceAccountId" class="form-control">
+    </div>
+    <div class="input-group">
+      <span class="input-group-text">Destination Account ID:</span>
+      <input type="text" [(ngModel)]="destinationAccountId" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Example label</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Another label</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+    </div>
+    <div class="input-group">
+      <span class="input-group-text"> Amount:</span>
+      <input type="text"  [(ngModel)]="amount" class="form-control">
+    </div> -->
+    
+
+    <div class="container mt-4 col-md-5 ">
+      <div class="row mb-3 ">
+        <div class="col-md-12">
+          <div class="input-group">
+            <span class="input-group-text col-md-5">Source Account ID:</span>
+            <input type="text" placeholder="Enter Source Account ID" [(ngModel)]="sourceAccountId" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <div class="input-group">
+            <span class="input-group-text col-md-5">Destination Account ID:</span>
+            <input type="text" placeholder="Enter Destination Account ID" [(ngModel)]="destinationAccountId" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <div class="input-group">
+            <span class="input-group-text col-md-5">Amount:</span>
+            <input type="text" placeholder="Enter Amount" [(ngModel)]="amount" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-primary w-100" (click)="transferFunds()">Transfer Funds</button>
+        </div>
+      </div>
+    </div>
+    <!-- <div>
       <label>Source Account ID:</label>
       <input type="text" [(ngModel)]="sourceAccountId">
     </div>
     <div>
       <label>Destination Account ID:</label>
       <input type="text" [(ngModel)]="destinationAccountId">
-    </div>
-    <div>
+    </div> -->
+    <!-- <div>
       <label>Amount:</label>
       <input type="text" [(ngModel)]="amount">
-    </div>
-    <button (click)="transferFunds()">Transfer Funds</button>
+    </div> -->
+    <!-- <button (click)="transferFunds()">Transfer Funds</button> -->
     <div *ngIf="transferSuccess">
       <p>Transfer successful!</p>
     </div>
