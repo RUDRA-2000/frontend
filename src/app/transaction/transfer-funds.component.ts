@@ -24,7 +24,7 @@ export class TransferFundsComponent {
   ) { }
 
   validateAccount(accountId: string): boolean {
-    const accountIdPattern = /^\d{13}$/;
+    const accountIdPattern = /^\d{13}$/; //1234011000001
     return accountIdPattern.test(accountId);
   }
 

@@ -7,7 +7,7 @@ import { Transaction } from '../model/transaction';
   providedIn: 'root'
 })
 export class TransactionService {
-  apiUrl = 'http://localhost:5099/api/transaction'; // Replace with your API URL
+  apiUrl = 'https://transactionapis.azurewebsites.net/'; // Replace with your API URL
 
   constructor(private http: HttpClient) { }
 
