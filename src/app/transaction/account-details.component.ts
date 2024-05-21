@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Transaction } from '../model/transaction';
 import { TransactionService } from './transaction.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-account-details',

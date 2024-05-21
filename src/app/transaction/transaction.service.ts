@@ -21,7 +21,7 @@ export class TransactionService {
     return this.http.get<Transaction[]>(url);
   }
 
-  transferFunds(sourceAccountId: number, destinationAccountId: number, amount: number): Observable<any> {
+  transferFunds(sourceAccountId: number, destinationAccountId: number, amount: number, balance:number): Observable<any> {
     const url = `${this.apiUrl}/Transfer`;
     const body = { sourceAccountId, destinationAccountId, amount };
     return this.http.post(url, body);
