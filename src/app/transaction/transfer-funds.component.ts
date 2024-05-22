@@ -69,7 +69,7 @@ export class TransferFundsComponent {
     }
 
 
-    this.transactionService.transferFunds(sourceAccountId, destinationAccountId, amount, balance)
+    this.transactionService.transferFunds(sourceAccountId, destinationAccountId, amount)
       .subscribe(
         {
           next: (data) => {

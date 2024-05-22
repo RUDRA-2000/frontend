@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Transaction } from '../model/transaction';
-import { TransactionService } from './transaction.service';
+import { TransactionService } from '../transaction/transaction.service'; // Corrected import path
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -28,6 +28,11 @@ export class AccountDetailsComponent {
         }
   });
   }
+
+  downloadTransactionsAsPDF() {
+    this.transactionService.downloadTransactionsAsPDF(this.accountId);
+  }
+
   onPageChange(pageNumber: number) {
     this.currentPage = pageNumber;
   }
